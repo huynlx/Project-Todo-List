@@ -6,7 +6,9 @@ import Item from './Item';
 const RightSide = ({
     data,
     handleRemoveData,
-    handleUpdateDate
+    handleUpdateDate,
+    close,
+    setClose
 }) => {
     const [check, setCheck] = useState({});
     const [search, setSearch] = useState('');
@@ -39,7 +41,7 @@ const RightSide = ({
 
     return (
         <div className='to-do-list'>
-            <h3 className='title'>To Do List</h3>
+            <h3 className='title'>To Do List <span style={{visibility: close && 'hidden' }} onClick={() => setClose(!close)} className='btnOpen'>&#43;</span></h3>
             <div className='main'>
                 <div className='name-search'>
                     <input
@@ -66,7 +68,7 @@ const RightSide = ({
                 }
             </div>
             {
-                checklist.length > 0 && <div className='bulk'>
+                (checklist.length > 0 && !close) && <div className='bulk'>
                     Bulk Action:
                     <div className='btn-bulk'>
                         <button className='action--1' style={{ backgroundColor: '#007bff' }}>Done</button>
@@ -74,11 +76,11 @@ const RightSide = ({
                             className='action--2'
                             onClick={
                                 () => {
-                                    let result = window.confirm("Delete these tasks ?");
+                                    let result = window.confirm("Delete the selected tasks ?");
                                     if (result) {
                                         setCheckList([]);
                                         handleRemoveData(checklist);
-                                    } 
+                                    }
                                 }
                             }>
                             Remove

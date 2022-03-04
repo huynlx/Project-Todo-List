@@ -45,6 +45,11 @@
   color: white;
 }
 
+.to-do-list .action--1:hover,
+.action--2:hover {
+  filter: brightness(0.9);
+}
+
 .to-do-list .action--1 {
   background-color: #40cfe6;
 }
@@ -150,4 +155,43 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.to-do-list .btnOpen {
+  display: none;
+  transform: scale(1.7);
+  line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .to-do-list .btnOpen {
+    display: block;
+    float: right;
+  }
+  .to-do-list .main {
+    width: 95%;
+  }
+
+  .to-do-list .bulk {
+    width: 100%;
+  }
+
+  .to-do-list .bulk .btn-bulk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+
+  .to-do-list .detail{
+    padding: 0px 10px 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .to-do-list .main {
+    width: 92%;
+  }
+  .to-do-list .detail{
+    padding: 0px 15px 15px 15px;
+  }
 }

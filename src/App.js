@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import './css/App.css';
 import LeftSide from './components/LeftSide';
 import RightSide from './components/RightSide';
 import { randomString } from './utils/randomString';
 
 const App = () => {
   const [data, setData] = useState(JSON.parse(localStorage.getItem('data')) || []);
+
+  const [close, setClose] = useState(false);
 
   const handleAddData = (value) => {
     setData([...data, value])
@@ -45,13 +47,19 @@ const App = () => {
     <div className="App">
       <main>
         {/* left */}
-        <LeftSide handleAddData={handleAddData} />
+        <LeftSide
+          handleAddData={handleAddData}
+          close={close}
+          setClose={setClose}
+        />
 
         {/* right */}
         <RightSide
           data={data}
           handleRemoveData={handleRemoveData}
           handleUpdateDate={handleUpdateDate}
+          close={close}
+          setClose={setClose}
         />
       </main>
     </div>

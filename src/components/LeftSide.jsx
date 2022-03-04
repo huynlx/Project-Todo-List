@@ -4,7 +4,7 @@ import { randomString } from '../utils/randomString';
 import { setMinDate } from '../utils/setMinDate';
 import { getToday } from '../utils/getToday';
 
-const LeftSide = ({ handleAddData }) => {
+const LeftSide = ({ handleAddData, close, setClose }) => {
     const [newData, setNewData] = useState({
         prio: '2'
     });
@@ -41,10 +41,9 @@ const LeftSide = ({ handleAddData }) => {
         })
     }, [])
 
-
     return (
-        <div className='new-task'>
-            <h3 className='title'>New Task</h3>
+        <div className='new-task' style={{ bottom: close ? '5%' : '-650px' }}>
+            <h3 className='title'>New Task <span className='btnClose' onClick={() => setClose(!close)}>&#10006;</span></h3>
             <form id="main-new-task" className='main-new-task' onSubmit={(e) => handleSubmit(e)}>
                 <div className='name-task'>
                     <input

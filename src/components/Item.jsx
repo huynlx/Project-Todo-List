@@ -22,7 +22,7 @@ const Item = ({ item, handleRemoveData, handleUpdateDate, tt, check, setCheckLis
     }
 
     const remove = () => {
-        let result = window.confirm("Delete this task ?");
+        let result = window.confirm(`Delete the ${item.name} task ?`);
         if (result) {
             setCheckList(checklist.filter(item => item.id != checked.id));
             handleRemoveData(item.id);

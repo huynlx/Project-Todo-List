@@ -69,3 +69,39 @@ select {
   color: white;
   font-weight: bold;
 }
+
+.new-task #submit:hover {
+  filter: brightness(0.9);
+}
+
+.new-task .btnClose {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .new-task .select {
+    flex-direction: column;
+  }
+  .new-task .select .priority {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .new-task .btnClose {
+    display: block;
+    float: right;
+  }
+  .new-task .main-new-task {
+    width: 95%;
+  }
+  .new-task {
+    transition: all 0.4s;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .new-task .main-new-task {
+    width: 92%;
+  }
+}
