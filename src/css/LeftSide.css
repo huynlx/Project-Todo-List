@@ -1,0 +1,71 @@
+.new-task h3.title {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.new-task .main-new-task {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.new-task .name-task {
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.new-task .name-task input {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 30px;
+  padding: 15px;
+  border-radius: 3px;
+  border: 2px solid rgb(201, 196, 196);
+}
+
+.new-task .description textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.new-task .select {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.new-task .select .due-date {
+  flex-basis: 47%;
+}
+
+.new-task .select .priority {
+  flex-basis: 47%;
+}
+
+.new-task .select .due-date input#date,
+select {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  margin-top: 5px;
+  border: 2px solid black;
+}
+
+.new-task #submit {
+  width: 100%;
+  margin-top: 4rem;
+  height: 35px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
