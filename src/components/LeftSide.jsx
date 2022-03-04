@@ -42,7 +42,7 @@ const LeftSide = ({ handleAddData, close, setClose }) => {
     }, [])
 
     return (
-        <div className='new-task' style={{ bottom: close ? '5%' : '-650px' }}>
+        <div className='new-task' style={{ bottom: close ? '-10%' : '-100%' }}>
             <h3 className='title'>New Task <span className='btnClose' onClick={() => setClose(!close)}>&#10006;</span></h3>
             <form id="main-new-task" className='main-new-task' onSubmit={(e) => handleSubmit(e)}>
                 <div className='name-task'>

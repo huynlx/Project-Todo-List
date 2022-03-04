@@ -40,7 +40,6 @@
 .action--2 {
   border: none;
   padding: 7px 25px;
-  margin-left: 15px;
   border-radius: 6px;
   color: white;
 }
@@ -64,6 +63,15 @@
 
 .to-do-list .head--1 {
   position: relative;
+  width: 55%;
+}
+
+.to-do-list .head--1 label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: inherit;
 }
 
 .to-do-list .checkbox {
@@ -163,6 +171,17 @@ select {
   line-height: 1;
 }
 
+.to-do-list .head .btn-group {
+  display: flex;
+  gap: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+  .to-do-list .head .btn-group {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .to-do-list .btnOpen {
     display: block;
@@ -179,11 +198,15 @@ select {
   .to-do-list .bulk .btn-bulk {
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
-  .to-do-list .detail{
+  .to-do-list .detail {
     padding: 0px 10px 10px 10px;
+  }
+  
+  .to-do-list .head{
+    padding: 8px 15px;
   }
 }
 
@@ -191,7 +214,11 @@ select {
   .to-do-list .main {
     width: 92%;
   }
-  .to-do-list .detail{
+  .to-do-list .detail {
     padding: 0px 15px 15px 15px;
+  }
+
+  .to-do-list .head--1{
+    width: 50%;
   }
 }

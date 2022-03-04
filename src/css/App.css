@@ -22,7 +22,6 @@ main {
   overflow-y: scroll;
 }
 
-
 @media only screen and (max-width: 768px) {
   main {
     flex-direction: column;
@@ -31,13 +30,14 @@ main {
   }
   .new-task {
     position: absolute;
-    bottom: 50px;
     flex-basis: auto;
     width: 100%;
     z-index: 1000;
     background-color: white;
     border: 0;
     border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
     border-radius: 20px;
   }
   .to-do-list {

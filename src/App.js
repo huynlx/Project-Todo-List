@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import './css/App.css';
 import LeftSide from './components/LeftSide';
 import RightSide from './components/RightSide';
-import { randomString } from './utils/randomString';
 
 const App = () => {
   const [data, setData] = useState(JSON.parse(localStorage.getItem('data')) || []);
@@ -18,19 +17,19 @@ const App = () => {
       var ids = value.map(val => val.id);
       var temp = data;
       for (let i = 0; i < ids.length; i++) {
-        temp = temp.filter(item => item.id != ids[i])
+        temp = temp.filter(item => item.id !== ids[i])
       }
       setData(temp);
     } else {
-      setData(data.filter(item => item.id != value))
+      setData(data.filter(item => item.id !== value))
     }
   }
 
   const handleUpdateDate = (value) => {
-    let result = window.confirm("Update ?");
+    let result = window.confirm(`Update this task ?`);
     if (result) {
       const update = data.map((item, index) => {
-        if (index == data.findIndex(item => item.id == value.id)) {
+        if (index == data.findIndex(item => item.id === value.id)) {
           return { ...item, ...value }
         }
         return item

@@ -18,7 +18,7 @@ const RightSide = ({
         return new Date(a.date) - new Date(b.date)
     })
 
-    const tt = (id) => {
+    const detail = (id) => {
         setCheck(check => {
             if (check) {
                 return {
@@ -41,7 +41,7 @@ const RightSide = ({
 
     return (
         <div className='to-do-list'>
-            <h3 className='title'>To Do List <span style={{visibility: close && 'hidden' }} onClick={() => setClose(!close)} className='btnOpen'>&#43;</span></h3>
+            <h3 className='title'>To Do List <span style={{ visibility: close && 'hidden' }} onClick={() => setClose(!close)} className='btnOpen'>&#43;</span></h3>
             <div className='main'>
                 <div className='name-search'>
                     <input
@@ -56,7 +56,7 @@ const RightSide = ({
                     data.filter(item => item.name.toLowerCase().includes(search)).map(item => (
                         <Item
                             check={check}
-                            tt={tt}
+                            detail={detail}
                             item={item}
                             key={item.id}
                             handleRemoveData={handleRemoveData}
@@ -68,7 +68,7 @@ const RightSide = ({
                 }
             </div>
             {
-                (checklist.length > 0 && !close) && <div className='bulk'>
+                (checklist.length > 0) && <div className='bulk'>
                     Bulk Action:
                     <div className='btn-bulk'>
                         <button className='action--1' style={{ backgroundColor: '#007bff' }}>Done</button>

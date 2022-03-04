@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Item = ({ item, handleRemoveData, handleUpdateDate, tt, check, setCheckList, checklist }) => {
+const Item = ({ item, handleRemoveData, handleUpdateDate, detail, check, setCheckList, checklist }) => {
     const [dt, setDt] = useState({
         id: item.id,
         name: item.name,
@@ -24,7 +24,7 @@ const Item = ({ item, handleRemoveData, handleUpdateDate, tt, check, setCheckLis
     const remove = () => {
         let result = window.confirm(`Delete the ${item.name} task ?`);
         if (result) {
-            setCheckList(checklist.filter(item => item.id != checked.id));
+            setCheckList(checklist.filter(item => item.id !== checked.id));
             handleRemoveData(item.id);
         }
     }
@@ -33,7 +33,7 @@ const Item = ({ item, handleRemoveData, handleUpdateDate, tt, check, setCheckLis
         if (checked.status) {
             setCheckList([...checklist, checked])
         } else {
-            setCheckList(checklist.filter(item => item.id != checked.id))
+            setCheckList(checklist.filter(item => item.id !== checked.id))
         }
     }, [checked])
 
@@ -66,8 +66,8 @@ const Item = ({ item, handleRemoveData, handleUpdateDate, tt, check, setCheckLis
                     />
                     <label htmlFor={item.name}> {item.name}</label>
                 </div>
-                <div>
-                    <button className='action--1' onClick={() => tt(item.id)}>Detail</button>
+                <div className='btn-group'>
+                    <button className='action--1' onClick={() => detail(item.id)}>Detail</button>
                     <button className='action--2' onClick={() => remove()} >Remove</button>
                 </div>
             </div>
