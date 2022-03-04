@@ -176,6 +176,13 @@ select {
   gap: 5px;
 }
 
+.to-do-list .bulk .btn-bulk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
 @media only screen and (max-width: 480px) {
   .to-do-list .head .btn-group {
     flex-direction: column;
@@ -195,17 +202,11 @@ select {
     width: 100%;
   }
 
-  .to-do-list .bulk .btn-bulk {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
   .to-do-list .detail {
     padding: 0px 10px 10px 10px;
   }
-  
-  .to-do-list .head{
+
+  .to-do-list .head {
     padding: 8px 15px;
   }
 }
@@ -218,7 +219,7 @@ select {
     padding: 0px 15px 15px 15px;
   }
 
-  .to-do-list .head--1{
+  .to-do-list .head--1 {
     width: 50%;
   }
 }
